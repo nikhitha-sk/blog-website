@@ -1,36 +1,109 @@
-.form-container {
-    width: 60%;
-    margin: 30px auto;
-    background: #ffffffd1;
-    padding: 25px;
-    border-radius: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
+/* No body styles here, as common.css handles the main page background */
 
-.form-container h1 {
+/* Page Title (Edit Blog) */
+h1 {
+    color: #00e5ff; /* Matches main headings in index.css and auth.css */
     text-align: center;
-    color: #5e60ce;
+    margin-top: 30px; /* Add some margin from the header */
+    margin-bottom: 30px;
+    text-shadow: 0 3px 8px rgba(0, 229, 255, 0.3);
+    font-size: 2.8em;
 }
 
-form input, form textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
+/* Form Container - Glassmorphism Card Style */
+form {
+    background-color: rgba(0, 0, 0, 0.3); /* Translucent dark background */
+    backdrop-filter: blur(12px); /* Glass blur effect */
+    -webkit-backdrop-filter: blur(12px);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), /* Stronger shadow */
+                0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+    width: 90%; /* Take a good portion of the screen width */
+    max-width: 800px; /* Max width for the form card */
+    margin: 0 auto 50px auto; /* Horizontally center and add bottom margin */
+    display: flex; /* Use flexbox for stacking form elements */
+    flex-direction: column;
+    gap: 20px; /* Space between input fields, textarea, and button */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+/* Input Fields (for title) */
+input[type="text"] {
+    width: 100%; /* Take full width of the form */
+    padding: 15px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.15); /* Subtle border */
+    border-radius: 10px; /* Rounded corners */
+    background-color: rgba(0, 0, 0, 0.4); /* Dark translucent background */
+    color: #e0e0e0; /* Light text color */
+    font-size: 1.1em;
+    outline: none; /* Remove default outline */
+    transition: all 0.3s ease;
+    box-sizing: border-box; /* Include padding in width */
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.4); /* Inner shadow for depth */
+}
+
+input[type="text"]::placeholder {
+    color: #888888; /* Darker placeholder text */
+}
+
+input[type="text"]:focus {
+    border-color: #00bcd4; /* Cyan border on focus */
+    background-color: rgba(0, 0, 0, 0.5); /* Slightly darker background on focus */
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.5), /* Enhanced inner shadow */
+                0 0 0 4px rgba(0, 188, 212, 0.2); /* Outer glow effect */
+}
+
+/* Textarea Field (for content) */
+textarea {
+    width: 100%; /* Take full width of the form */
+    height: 250px; /* Sufficient height for content editing */
+    padding: 15px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 10px;
-    border: 1px solid #ccc;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #e0e0e0;
+    font-size: 1.1em;
+    outline: none;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.4);
+    resize: vertical; /* Allow vertical resizing only */
+    line-height: 1.6; /* Improve readability of text */
 }
 
-form button {
-    background-color: #560bad;
+textarea::placeholder {
+    color: #888888;
+}
+
+textarea:focus {
+    border-color: #00bcd4;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.5),
+                0 0 0 4px rgba(0, 188, 212, 0.2);
+}
+
+/* Submit Button - Matches New Post/Login/Register button style */
+button[type="submit"] {
+    background-color: #1976D2; /* Deep blue primary color */
     color: white;
+    padding: 15px 25px;
     border: none;
-    padding: 12px 20px;
-    border-radius: 10px;
-    font-size: 16px;
+    border-radius: 35px;
+    font-size: 1.2em;
+    font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5),
+                0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+    width: 100%; /* Make button full width of the form */
+    margin-top: 10px; /* Additional space above button */
 }
 
-form button:hover {
-    background-color: #3f0b78;
+button[type="submit"]:hover {
+    background-color: #2196F3; /* Lighter blue on hover */
+    transform: translateY(-5px); /* Lift effect */
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7),
+                0 0 0 1px rgba(255, 255, 255, 0.1) inset;
 }

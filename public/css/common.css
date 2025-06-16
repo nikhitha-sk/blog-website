@@ -1,33 +1,75 @@
+/* Overall Page Body Styling - Dark Theme */
 body {
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(to right, #e0c3fc, #8ec5fc);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Deep, dark blue-black gradient for the background */
+    background: linear-gradient(135deg, #0f1c2b, #070c12);
+    color: #e0e0e0; /* Light text for readability */
     margin: 0;
     padding: 0;
+    /* Flexbox for easy vertical centering and footer stickiness if content is short */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures body takes at least full viewport height */
 }
 
+/* Navigation Bar Styling */
 nav {
-    background-color: #7209b7;
-    padding: 15px 0;
-    text-align: center;
+    background-color: rgba(25, 35, 45, 0.6); /* Semi-transparent dark background for glass effect */
+    backdrop-filter: blur(8px); /* Glass blur effect */
+    -webkit-backdrop-filter: blur(8px); /* Safari compatibility */
+    padding: 15px 30px;
+    display: flex;
+    justify-content: center; /* Center the navigation links */
+    gap: 30px; /* Space between links */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Subtle shadow for depth */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Light border at the bottom */
+    width: 100%; /* Ensures nav stretches full width */
+    box-sizing: border-box; /* Include padding in width */
 }
 
 nav a {
-    color: white;
-    margin: 0 15px;
+    color: #00e5ff; /* Bright cyan for links */
     text-decoration: none;
-    font-size: 18px;
     font-weight: bold;
-    transition: color 0.3s;
+    font-size: 1.15em;
+    padding: 8px 15px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 nav a:hover {
-    color: #ffd6ff;
+    background-color: rgba(0, 229, 255, 0.1); /* Slight cyan tint on hover */
+    color: #84ffff; /* Lighter cyan on hover */
+    transform: translateY(-2px); /* Subtle lift effect */
+    box-shadow: 0 2px 10px rgba(0, 229, 255, 0.2); /* Glow effect on hover */
 }
 
+/* Horizontal Rule (HR) Styling */
+hr {
+    border: none; /* Remove default border */
+    border-top: 1px solid rgba(255, 255, 255, 0.08); /* Thin, subtle line */
+    margin: 20px 0; /* Space above and below the HR */
+    width: 90%; /* Match container width */
+    max-width: 1400px;
+}
+
+/* Footer Styling */
 footer {
-    background-color: #7209b7;
-    color: white;
+    background-color: rgba(25, 35, 45, 0.6); /* Same semi-transparent dark background as nav */
+    backdrop-filter: blur(8px); /* Glass blur effect */
+    -webkit-backdrop-filter: blur(8px); /* Safari compatibility */
+    padding: 20px;
     text-align: center;
-    padding: 15px 0;
-    margin-top: 40px;
+    font-size: 0.9em;
+    color: #a0a0a0; /* Slightly desaturated text for footer */
+    margin-top: auto; /* Pushes footer to the bottom of the page */
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.4); /* Shadow at the top of the footer */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Light border at the top */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+footer p {
+    margin: 0; /* Remove default paragraph margin */
 }
