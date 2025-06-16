@@ -1,0 +1,52 @@
+<%- include("partials/header") %>
+<link rel="stylesheet" href="/css/index.css">
+
+<h1>All Blogs</h1>
+
+<div class="new-post-container">
+    <a href="/blogs/new" class="new-post-btn">➕ New Post</a>
+</div>
+
+<% blogs.forEach(blog => { %>
+    <div class="blog-post">
+        <h2><%= blog.title %></h2>
+        <p><%= blog.content.substring(0, 100) %>...</p>
+        <small>By <%= blog.author.username %></small>
+
+        <div class="interaction-buttons">
+            <form method="POST" action="/blogs/<%= blog._id %>/like">
+                <button class="like-btn" type="submit">
+                    ❤️ <%= blog.likes.length %>
+                </button>
+            </form>
+
+            <form method="POST" action="/blogs/<%= blog._id %>/comments">
+                <input type="text" name="comment" placeholder="Add a comment" required />
+                <button class="comment-btn" type="submit">💬</button>
+            </form>
+        </div>
+
+        <div class="comment-section">
+            <% blog.comments.forEach(c => { %>
+                <p><strong><%= c.author.username %></strong>: <%= c.text %></p>
+            <% }) %>
+        </div>
+
+        <% if (currentUser && currentUser.toString() === blog.author._id.toString()) { %>
+            <div class="edit-delete">
+                <a href="/blogs/<%= blog._id %>/edit">✏️ Edit</a>
+                <form method="POST" action="/blogs/<%= blog._id %>?_method=DELETE">
+                    <button type="submit">🗑️ Delete</button>
+                </form>
+            </div>
+        <% } %>
+    </div>
+<% }) %>
+
+<div class="pagination">
+    <% for (let i = 1; i <= pages; i++) { %>
+        <a href="/?page=<%= i %>"><%= i %></a>
+    <% } %>
+</div>
+
+<%- include("partials/footer") %>

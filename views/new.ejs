@@ -1,0 +1,9 @@
+<%- include("partials/header") %>
+<link rel="stylesheet" href="/css/new.css">
+<h1>New Blog</h1>
+<form action="/blogs" method="POST">
+    <input type="text" name="title" placeholder="Title" required><br>
+    <textarea name="content" placeholder="Content" required></textarea><br>
+    <button type="submit">Create</button>
+</form>
+<%- include("partials/footer") %>

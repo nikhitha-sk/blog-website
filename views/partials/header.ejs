@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blog App</title>
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<nav>
+    <a href="/">Home</a>
+    <% if (!currentUser) { %>
+        <a href="/register">Register</a>
+        <a href="/login">Login</a>
+    <% } else { %>
+        <a href="/logout">Logout</a>
+    <% } %>
+</nav>
+<hr>

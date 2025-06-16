@@ -1,0 +1,81 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #e0c3fc, #8ec5fc);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.blog-post {
+    background-color: #ffffffd1;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.blog-post:hover {
+    transform: scale(1.01);
+}
+
+.blog-post h2 {
+    color: #5e60ce;
+}
+
+.blog-post p {
+    color: #333;
+}
+
+.blog-meta {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+}
+
+.icons {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    font-size: 20px;
+    align-items: center;
+}
+
+.icons .fa-heart,
+.icons .fa-comment {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.icons .fa-heart:hover,
+.icons .fa-comment:hover {
+    transform: scale(1.2);
+    color: #e63946;
+}
+
+.new-post-btn {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.new-post-btn a {
+    text-decoration: none;
+    background-color: #7209b7;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 18px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease, transform 0.3s;
+}
+
+.new-post-btn a:hover {
+    background-color: #560bad;
+    transform: scale(1.05);
+}
